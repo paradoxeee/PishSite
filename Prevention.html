@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="getUrl.js"></script>
+
 </head>
 
 <body>
@@ -21,11 +23,11 @@
         <div class="info">
             <div>
                 <span>Nom:</span>
-                <span>Bylal Aït-Abbas</span>
+                <span id="nom">Aït-Abbas</span>
             </div>
             <div>
-                <span>Date anniversaire :</span>
-                <span>01/09/2028</span>
+                <span>Prenom :</span>
+                <span id="prenom">Bylal</span>
             </div>
         </div>
         <div class="conseil">
@@ -44,8 +46,6 @@
                 <span>2.</span>
                 <span class="titreConseil">Évitez d’installer des applications via un QR code</span>
             </div>
-
-
             <span class="description">Ne téléchargez pas d’applications de sécurité à partir d’un lien scanné d’un QR
                 code, car cela peut contenir un logiciel malveillant (malware).</span>
         </div>
@@ -57,6 +57,15 @@
             <span class="description">Méfiez-vous des QR codes présents sur des cartes, des affiches lors d’événements
                 ou dans des endroits fréquentés.</span>
         </div>
+        <script>
+            dic = getUrl()
+            console.log(dic);
+            if (dic) {
+                document.getElementById("nom").innerHTML = dic["firstname"];
+                document.getElementById("prenom").innerHTML = dic["lastname"]
+            }
+
+        </script>
     </main>
 
 
